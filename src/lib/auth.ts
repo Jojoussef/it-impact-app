@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/db';
+import { get } from '@/utils/lodash';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 import { NextAuthOptions } from 'next-auth';
@@ -24,15 +25,13 @@ export const authOptions: NextAuthOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!
         })
-        // Add more providers as needed
     ],
     callbacks: {
         async session({ session, token }) {
             if (token) {
-                session.user.id = token.id as string;
-                session.user.name = token.name;
-                session.user.email = token.email;
-                session.user.image = token.picture as string;
+                session!.user!.name = token.name;
+                session!.user!.email = token.email;
+                session!.user!.image = token.picture as string;
             }
 
             return session;
