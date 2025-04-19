@@ -1,12 +1,22 @@
-import HomePage from '@/app/(delete-this-and-modify-page.tsx)/HomePage';
+'use client';
 
-/**
- * The main page component that renders the HomePage component.
- *
- * @returns {JSX.Element} The rendered HomePage component.
- */
-const Page = () => {
-    return <HomePage />;
-};
+import HomePage from './(public)/HomePage';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
-export default Page;
+export default function Home() {
+    const { data: session } = useSession();
+
+    if (session) {
+        return (
+            <>
+                <p>Welcome, {session.user?.name}</p>
+                <button onClick={() => signOut()}>Sign out</button>
+            </>
+        );
+    }
+    return (
+        <>
+            <HomePage />
+        </>
+    );
+}

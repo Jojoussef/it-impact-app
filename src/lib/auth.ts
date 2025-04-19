@@ -12,9 +12,8 @@ export const authOptions: NextAuthOptions = {
         strategy: 'jwt'
     },
     pages: {
-        signIn: '/auth/signin' // Custom sign-in page (if you want one)
-        // signOut: "/auth/signout", // Custom sign-out page
-        // error: "/auth/error", // Error page
+        signIn: '/auth/sign-in', // Custom sign-in page (if you want one)
+        signOut: '/auth/sign-out' // Custom sign-out page
     },
     providers: [
         GithubProvider({

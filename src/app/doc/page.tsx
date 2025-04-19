@@ -8,14 +8,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { submitFilledFormImage } from '@/utils/api';
 
 import { Camera, Check, FileUp, Upload, X } from 'lucide-react';
 
 // Document types that need to be photographed
 const REQUIRED_DOCUMENTS = [
-    { id: 1, name: 'ID Card (front and back)', description: 'Clear photo of your government-issued ID' },
-    { id: 2, name: 'Proof of Address', description: 'Utility bill or bank statement from the last 3 months' },
-    { id: 3, name: 'Signed Application Form', description: 'All pages of your signed application form' }
+    { id: 1, name: 'Filled CNAM Form', description: 'CNAM refund form filled from your doctor or pharmacist' }
 ];
 
 export default function DocumentUploadPage() {
@@ -58,9 +57,8 @@ export default function DocumentUploadPage() {
         setStatus('idle');
 
         try {
-            // Simulate API call
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-
+            console.log('Submitting documents:', documents[1]);
+            //await submitFilledFormImage(documents[0]); // Assuming the filled form is the only document to submit
             // Randomly succeed or fail for demo purposes
             if (Math.random() > 0.5) {
                 setStatus('success');
