@@ -57,8 +57,7 @@ export default function DocumentUploadPage() {
         setStatus('idle');
 
         try {
-            console.log('Submitting documents:', documents[1]);
-            //await submitFilledFormImage(documents[0]); // Assuming the filled form is the only document to submit
+            await submitFilledFormImage(documents[1]!); // Assuming the filled form is the only document to submit
             // Randomly succeed or fail for demo purposes
             if (Math.random() > 0.5) {
                 setStatus('success');
