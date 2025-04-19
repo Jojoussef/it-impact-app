@@ -18,7 +18,7 @@ const REQUIRED_DOCUMENTS = [
 ];
 
 export default function DocumentUploadPage() {
-    const [documents, setDocuments] = useState<{ [key: number]: string | null }>({});
+    const [documents, setDocuments] = useState<{ [key: number]: File | null }>({});
     const [submitting, setSubmitting] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -30,18 +30,10 @@ export default function DocumentUploadPage() {
     const handleFileSelect = (docId: number, e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = (event) => {
-                if (event.target?.result) {
-                    setDocuments((prev) => ({
-                        ...prev,
-                        [docId]: event.target?.result as string
-                    }));
-                }
-            };
-
-            reader.readAsDataURL(file);
+            setDocuments((prev) => ({
+                ...prev,
+                [docId]: file
+            }));
         }
     };
 
@@ -57,13 +49,15 @@ export default function DocumentUploadPage() {
         setStatus('idle');
 
         try {
-            await submitFilledFormImage(documents[1]!); // Assuming the filled form is the only document to submit
-            // Randomly succeed or fail for demo purposes
-            if (Math.random() > 0.5) {
-                setStatus('success');
-            } else {
-                throw new Error('Some documents were not clear enough. Please retake them.');
-            }
+            await submitFilledFormImage(documents[1]!)
+                .then(() => {
+                    setStatus('success');
+                    setDocuments({}); // Clear documents after successful submission
+                })
+                .catch(() => {
+                    setStatus('error');
+                    setErrorMessage('Failed to submit the document. Please try again.');
+                }); // Assuming the filled form is the only document to submit
         } catch (error) {
             setStatus('error');
             setErrorMessage(error instanceof Error ? error.message : 'An unknown error occurred');

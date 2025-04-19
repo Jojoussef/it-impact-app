@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export async function submitFilledFormImage(file: string) {
+export async function submitFilledFormImage(file: File) {
     const formData = new FormData();
     formData.append('filled_form', file);
 
     try {
-        const response = await axios.post('http://your-api-domain.com/extract', formData, {
+        const response = await axios.post('http://localhost:8000/extract', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
