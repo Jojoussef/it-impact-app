@@ -7,9 +7,15 @@ const withBundleAnalyzer = initializeBundleAnalyzer({
     enabled: process.env.BUNDLE_ANALYZER_ENABLED === 'true'
 });
 
-// https://nextjs.org/docs/pages/api-reference/next-config-js
 const nextConfig: NextConfig = {
-    output: 'standalone'
+    output: 'standalone',
+    turbopack: {}
 };
 
 export default withBundleAnalyzer(nextConfig);
+
+module.exports = {
+    turbopack: {
+        resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json']
+    }
+};
