@@ -5,7 +5,6 @@ import localFont from 'next/font/local';
 
 import { ThemeProvider } from 'next-themes';
 
-import NavigationBar from '@/app/(delete-this-and-modify-page.tsx)/NavigationBar';
 import '@/app/globals.css';
 import AuthProvider from '@/components/auth/session-provider';
 
@@ -32,10 +31,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
                 <ThemeProvider attribute='class'>
-                    <AuthProvider>
-                        <NavigationBar />
-                        {children}
-                    </AuthProvider>
+                    <AuthProvider>{children}</AuthProvider>
                 </ThemeProvider>
             </body>
         </html>
