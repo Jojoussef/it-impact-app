@@ -243,7 +243,7 @@ const ResultsDisplay = ({ results }: { results: string }) => {
             </CardHeader>
             <CardContent>
                 <div className='rounded-md bg-slate-50 p-4 dark:bg-slate-900'>
-                    <pre className='text-sm whitespace-pre-wrap'>{results}</pre>
+                    <pre className='text-sm whitespace-pre-wrap'>{results.toString()}</pre>
                 </div>
             </CardContent>
         </Card>
