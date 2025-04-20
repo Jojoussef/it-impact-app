@@ -14,17 +14,6 @@ export default function Dashboard() {
     const [collapsed, setCollapsed] = useState(false);
     const [activeItem, setActiveItem] = useState('dashboard');
 
-    useEffect(() => {
-        if (status === 'unauthenticated') {
-            redirect('/');
-        }
-    }, [status]);
-
-    // Show loading state while checking authentication
-    if (status === 'loading') {
-        return <div className='flex h-screen items-center justify-center'>Loading...</div>;
-    }
-
     return (
         <div className='flex h-screen bg-gray-50'>
             <DashboardSidebar
