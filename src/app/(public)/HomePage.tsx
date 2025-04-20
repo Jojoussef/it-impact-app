@@ -13,11 +13,10 @@ export default function Home() {
             <BlobAnimation />
 
             {/* Top curved lines */}
-            <div className='absolute top-0 left-0 flex h-[500px] w-full items-center justify-center overflow-hidden'>
-                <div className='absolute top-0 h-[100px] w-[50%] rounded-[70%] border-b-4 border-blue-300'></div>
-
-                <div className='absolute top-0 h-[500px] w-[120%] rounded-[50%] border-b-4 border-blue-300 opacity-30'></div>
-                <div className='absolute top-[-50px] h-[500px] w-[110%] rounded-[50%] border-b-4 border-blue-400 opacity-40'></div>
+            <div className='absolute top-0 left-0 flex h-[60rem] w-full items-center justify-center overflow-hidden'>
+                <div className='absolute -top-[18.5rem] h-[27rem] w-[70%] rounded-[100%] border-4 border-[#05B8FC]'></div>
+                <div className='absolute -top-[18.5rem] h-[28rem] w-[72%] rounded-[100%] border-4 border-[#2A79FD]'></div>
+                <div className='absolute -top-[18rem] h-[60rem] w-[120%] rounded-[50%] border-6 border-blue-300 opacity-60'></div>
             </div>
 
             {/* Content container */}
@@ -55,7 +54,7 @@ export default function Home() {
 
                 {/* Hero Section */}
                 <main className='container mx-auto px-4 pt-16 pb-32 text-center'>
-                    <h1 className='mt-16 mb-8 text-3xl font-bold md:text-4xl lg:text-5xl'>
+                    <h1 className='mt-16 mb-8 text-3xl leading-relaxed font-bold md:text-4xl md:leading-relaxed lg:text-5xl lg:leading-relaxed'>
                         Join{' '}
                         <div className='relative inline-block'>
                             <span className='bg-gradient-to-r from-[#174EAB] via-[#04C7FE] to-[#174EAB] bg-clip-text text-[3.5rem] text-transparent'>
@@ -71,12 +70,17 @@ export default function Home() {
 
                     <div className='mt-12'>
                         <Link
-                            href='#get-started'
-                            className='inline-flex items-center rounded-full border border-gray-300 bg-white px-8 py-3 font-medium text-gray-800 shadow-sm transition-all hover:bg-gray-50 hover:shadow'>
-                            Get Started <ArrowRight className='ml-2 h-4 w-4' />
+                            href='/auth/sign-up'
+                            className='inline-flex w-[23%] items-center justify-center rounded-full bg-gradient-to-r from-[#174EAB] via-[#04C7FE] to-[#174EAB] p-[2.2px] font-medium text-gray-800 shadow-sm transition-all hover:shadow'>
+                            <span className='inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-3'>
+                                Get Started <ArrowRight className='ml-2 h-4 w-4' />
+                            </span>
                         </Link>
                     </div>
                 </main>
+                <section className='container mx-auto px-4'>
+                    <h2>Maintain the Full Legal Protection of Your Data</h2>
+                </section>
             </div>
         </div>
     );

@@ -18,7 +18,10 @@ const robotoSerif = Roboto_Serif({
 
 export const metadata = {
     title: 'Seha - Shape the Future of Health',
-    description: 'Join Seha and help shape the future of health services'
+    description: 'Join Seha and help shape the future of health services',
+    icons: {
+        icon: '/favicon.ico'
+    }
 } as Metadata;
 
 const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
