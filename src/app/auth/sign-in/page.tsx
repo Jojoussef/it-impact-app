@@ -40,8 +40,8 @@ export default function SignIn() {
             if (result?.error) {
                 setError('Invalid email or password');
                 setIsLoading(false);
-                
-return;
+
+                return;
             }
 
             router.push('/dashboard');
@@ -108,7 +108,7 @@ return;
                                 <Loader2 className='mr-2 h-4 w-4 animate-spin' />
                             ) : (
                                 <Image
-                                    src='/images/Github.png'
+                                    src='/images/github-mark.png'
                                     width={20}
                                     height={20}
                                     alt='GitHub logo'

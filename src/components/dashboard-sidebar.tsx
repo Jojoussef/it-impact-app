@@ -4,8 +4,10 @@ import { Logo } from '@/app/(public)/HomePage';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { get } from '@/utils/lodash';
 
 import { ChevronLeft, ChevronRight, File, LayoutDashboard, LogOut, RefreshCcw, Settings } from 'lucide-react';
+import { signOut, useSession } from 'next-auth/react';
 
 interface DashboardSidebarProps {
     collapsed: boolean;
@@ -21,6 +23,8 @@ export function DashboardSidebar({ collapsed, setCollapsed, activeItem, setActiv
         { id: 'refund', label: 'Refund Request', icon: RefreshCcw },
         { id: 'settings', label: 'Settings', icon: Settings }
     ];
+
+    const { data: session, update: updateSession, status } = useSession();
 
     return (
         <div
@@ -51,12 +55,14 @@ export function DashboardSidebar({ collapsed, setCollapsed, activeItem, setActiv
             {/* User profile */}
             <div className={`flex items-center ${collapsed ? 'justify-center' : 'px-4'} py-4`}>
                 <Avatar className='h-10 w-10'>
-                    <AvatarImage src='/placeholder.svg?height=40&width=40' alt='User' />
-                    <AvatarFallback style={{ backgroundColor: '#04C7FE' }}>Y</AvatarFallback>
+                    <AvatarImage src={get(session, 'user.image', '')} alt='User' />
+                    <AvatarFallback style={{ backgroundColor: '#04C7FE' }}>
+                        {get(session, 'user.name', '').charAt(0).toUpperCase()}
+                    </AvatarFallback>
                 </Avatar>
                 {!collapsed && (
                     <div className='ml-3'>
-                        <p className='text-sm font-medium'>Youssef</p>
+                        <p className='text-sm font-medium'>{get(session, 'user.name', 'User')}</p>
                     </div>
                 )}
             </div>
@@ -92,6 +98,7 @@ export function DashboardSidebar({ collapsed, setCollapsed, activeItem, setActiv
             {/* Logout button */}
             <div className='p-4'>
                 <button
+                    onClick={() => signOut({ callbackUrl: '/' })}
                     className={`flex items-center ${
                         collapsed ? 'justify-center' : 'justify-start'
                     } w-full rounded-md px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100`}>
