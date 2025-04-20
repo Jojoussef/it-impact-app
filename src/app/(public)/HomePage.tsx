@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
 
                 {/* Data Security Section */}
-                <section className='mt-[15rem] flex w-full flex-col items-center justify-center gap-12 text-center'>
+                <section className='flex w-full flex-col items-center justify-center gap-12 text-center'>
                     <div className='mt-[5rem] flex h-[18rem] w-full items-center justify-center'>
                         <img src='/images/cnam-logo.png' alt='CNAM Logo Image' className='w-[55%] object-contain' />
                     </div>
