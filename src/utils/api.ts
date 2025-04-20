@@ -5,15 +5,15 @@ export async function submitFilledFormImage(file: File) {
     formData.append('filled_form', file);
 
     try {
-        const response = await axios.post('http://localhost:8000/extract', formData, {
+        const response = await axios.post('https://arsiiprod-production.up.railway.app/extract', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
         });
 
         console.log('Response:', response.data);
-        
-return response.data;
+
+        return response.data;
     } catch (error) {
         console.error('Error uploading form:', error);
         throw error;
