@@ -30,7 +30,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
         <html suppressHydrationWarning lang='en'>
             <body className={` ${robotoSerif.variable} bg-background text-foreground antialiased`}>
-                <ThemeProvider attribute='class'>
+                <ThemeProvider attribute='class' defaultTheme='light'>
                     <AuthProvider>{children}</AuthProvider>
                 </ThemeProvider>
             </body>
