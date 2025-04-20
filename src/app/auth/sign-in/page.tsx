@@ -56,10 +56,7 @@ export default function SignIn() {
         try {
             setSocialLoading(provider);
             //await signIn(provider, { callbackUrl: '/' });
-            const result = await signIn(provider, {
-                redirect: false,
-                callbackUrl: '/dashboard'
-            });
+            window.location.href = `/dashboard`;
         } catch (error) {
             setError(`Failed to sign in with ${provider}`);
             setSocialLoading(null);
