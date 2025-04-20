@@ -28,9 +28,7 @@ export function SettingsContent() {
     const [userData, setUserData] = useState({
         firstName: '',
         lastName: '',
-        email: '',
-        phone: '',
-        address: ''
+        email: ''
     });
 
     // Initialize form with session data
@@ -39,9 +37,7 @@ export function SettingsContent() {
             setUserData({
                 firstName: session.user.name?.split(' ')[0] || '',
                 lastName: session.user.name?.split(' ')[1] || '',
-                email: session.user.email || '',
-                phone: session.user.phone || '',
-                address: session.user.address || ''
+                email: session.user.email || ''
             });
         }
     }, [session]);
@@ -63,9 +59,7 @@ export function SettingsContent() {
                 },
                 body: JSON.stringify({
                     name: `${userData.firstName} ${userData.lastName}`,
-                    email: userData.email,
-                    phone: userData.phone,
-                    address: userData.address
+                    email: userData.email
                 })
             });
 
@@ -79,9 +73,7 @@ export function SettingsContent() {
                 user: {
                     ...session?.user,
                     name: `${userData.firstName} ${userData.lastName}`,
-                    email: userData.email,
-                    phone: userData.phone,
-                    address: userData.address
+                    email: userData.email
                 }
             });
 
@@ -131,14 +123,6 @@ export function SettingsContent() {
                         <div className='space-y-2'>
                             <Label htmlFor='email'>Email</Label>
                             <Input id='email' type='email' value={userData.email} onChange={handleChange} />
-                        </div>
-                        <div className='space-y-2'>
-                            <Label htmlFor='phone'>Phone number</Label>
-                            <Input id='phone' type='tel' value={userData.phone} onChange={handleChange} />
-                        </div>
-                        <div className='space-y-2'>
-                            <Label htmlFor='address'>Address</Label>
-                            <Textarea id='address' value={userData.address} onChange={handleChange} />
                         </div>
                     </CardContent>
                     <CardFooter>
