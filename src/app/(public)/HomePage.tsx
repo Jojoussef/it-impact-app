@@ -55,7 +55,7 @@ export default function Home() {
 
                     {/* Hero Section */}
                     <main className='container mx-auto px-4 pt-16 pb-32 text-center'>
-                        <h1 className='mt-16 mb-8 text-3xl leading-relaxed font-bold md:text-4xl md:leading-relaxed lg:text-5xl lg:leading-relaxed'>
+                        <h1 className='mt-16 mb-8 text-3xl leading-relaxed font-bold text-black md:text-4xl md:leading-relaxed lg:text-5xl lg:leading-relaxed'>
                             Join{' '}
                             <div className='relative inline-block'>
                                 <span className='bg-gradient-to-r from-[#174EAB] via-[#04C7FE] to-[#174EAB] bg-clip-text text-[3.5rem] text-transparent'>
