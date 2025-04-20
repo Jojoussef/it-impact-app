@@ -42,11 +42,11 @@ export function BlobAnimation() {
     }, []);
 
     return (
-        <div ref={containerRef} id='blobs' className='pointer-events-none absolute inset-0 overflow-hidden'>
-            <div className='blob absolute top-[-100px] right-[-100px] h-[400px] w-[400px] rounded-full bg-blue-300 opacity-60 blur-[80px] transition-transform duration-[10000ms] ease-in-out'></div>
-            <div className='blob absolute top-[30%] left-[-150px] h-[300px] w-[300px] rounded-full bg-blue-400 opacity-70 blur-[70px] transition-transform duration-[12000ms] ease-in-out'></div>
+        <div ref={containerRef} id='blobs' className='pointer-events-none absolute inset-0 h-[42rem] overflow-hidden'>
+            <div className='blob absolute top-[10%] right-[-100px] h-[400px] w-[400px] rounded-full bg-blue-300 opacity-60 blur-[80px] transition-transform duration-[10000ms] ease-in-out'></div>
+            <div className='blob absolute top-[10%] left-[-150px] h-[300px] w-[300px] rounded-full bg-blue-400 opacity-70 blur-[70px] transition-transform duration-[12000ms] ease-in-out'></div>
             <div className='blob absolute right-[10%] bottom-[-100px] h-[350px] w-[350px] rounded-full bg-blue-200 opacity-60 blur-[90px] transition-transform duration-[15000ms] ease-in-out'></div>
-            <div className='blob absolute top-[60%] right-[20%] h-[200px] w-[200px] rounded-full bg-blue-300 opacity-15 blur-[50px] transition-transform duration-[8000ms] ease-in-out'></div>
+            <div className='blob absolute top-[10%] right-[20%] h-[200px] w-[200px] rounded-full bg-blue-300 opacity-15 blur-[50px] transition-transform duration-[8000ms] ease-in-out'></div>
         </div>
     );
 }
