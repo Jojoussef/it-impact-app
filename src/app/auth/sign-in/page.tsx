@@ -55,7 +55,11 @@ export default function SignIn() {
     const handleSocialSignIn = async (provider: string) => {
         try {
             setSocialLoading(provider);
-            await signIn(provider, { callbackUrl: '/' });
+            //await signIn(provider, { callbackUrl: '/' });
+            const result = await signIn(provider, {
+                redirect: false,
+                callbackUrl: '/dashboard'
+            });
         } catch (error) {
             setError(`Failed to sign in with ${provider}`);
             setSocialLoading(null);
