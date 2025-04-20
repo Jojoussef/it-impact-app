@@ -41,12 +41,14 @@ export default function SignUp() {
         // Basic validation
         if (password !== confirmPassword) {
             setError('Passwords do not match');
-            return;
+            
+return;
         }
 
         if (password.length < 8) {
             setError('Password must be at least 8 characters long');
-            return;
+            
+return;
         }
 
         setIsLoading(true);

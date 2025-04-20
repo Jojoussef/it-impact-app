@@ -12,7 +12,8 @@ export async function submitFilledFormImage(file: File) {
         });
 
         console.log('Response:', response.data);
-        return response.data;
+        
+return response.data;
     } catch (error) {
         console.error('Error uploading form:', error);
         throw error;

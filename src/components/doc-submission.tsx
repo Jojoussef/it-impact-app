@@ -42,6 +42,7 @@ export default function DocumentUploadPage() {
         if (!allDocumentsUploaded) {
             setStatus('error');
             setErrorMessage('Please upload all required documents');
+
             return;
         }
 
@@ -53,6 +54,8 @@ export default function DocumentUploadPage() {
                 .then(() => {
                     setStatus('success');
                     setDocuments({}); // Clear documents after successful submission
+                    
+return;
                 })
                 .catch(() => {
                     setStatus('error');
