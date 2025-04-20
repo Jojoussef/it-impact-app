@@ -12,38 +12,45 @@ export const authOptions: NextAuthOptions = {
         strategy: 'jwt'
     },
     pages: {
-        signIn: '/auth/sign-in', // Custom sign-in page (if you want one)
-        signOut: '/auth/sign-out' // Custom sign-out page
+        signIn: '/auth/sign-in',
+        signOut: '/auth/sign-out'
     },
     providers: [
         GithubProvider({
-            clientId: process.env.GITHUB_CLIENT_ID!,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET!
+            clientId: get(process.env, 'GITHUB_CLIENT_ID', ''),
+            clientSecret: get(process.env, 'GITHUB_CLIENT_SECRET', '')
         }),
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID!,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+            clientId: get(process.env, 'GOOGLE_CLIENT_ID', ''),
+            clientSecret: get(process.env, 'GOOGLE_CLIENT_SECRET', '')
         })
     ],
     callbacks: {
         async session({ session, token }) {
             if (token) {
-                session!.user!.name = token.name;
-                session!.user!.email = token.email;
-                session!.user!.image = token.picture as string;
+                session = {
+                    ...session,
+                    user: {
+                        ...get(session, 'user', {}),
+                        name: get(token, 'name', ''),
+                        email: get(token, 'email', ''),
+                        image: get(token, 'picture', '')
+                    }
+                };
             }
 
             return session;
         },
         async jwt({ token, user }) {
-            const dbUser = user
-                ? await prisma.user.findUnique({
-                      where: { email: user.email! }
-                  })
-                : null;
+            if (user) {
+                const userEmail = get(user, 'email', '') || undefined;
+                const dbUser = await prisma.user.findUnique({
+                    where: { email: userEmail }
+                });
 
-            if (dbUser) {
-                token.id = dbUser.id;
+                if (dbUser) {
+                    token.id = get(dbUser, 'id', '');
+                }
             }
 
             return token;

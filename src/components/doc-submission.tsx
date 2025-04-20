@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { submitFilledFormImage } from '@/utils/api';
+import { ExtractionResponse, submitFilledFormImage } from '@/utils/api';
 
 import { Camera, Check, FileUp, Upload, X } from 'lucide-react';
 
@@ -22,7 +22,7 @@ export default function DocumentUploadPage() {
     const [submitting, setSubmitting] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
-    const [results, setResults] = useState<string>('');
+    const [results, setResults] = useState<ExtractionResponse>();
 
     // Check if all documents are uploaded
     const allDocumentsUploaded = REQUIRED_DOCUMENTS.every((doc) => documents[doc.id]);
@@ -234,7 +234,7 @@ export default function DocumentUploadPage() {
     );
 }
 
-const ResultsDisplay = ({ results }: { results: string }) => {
+const ResultsDisplay = ({ results }: { results: ExtractionResponse }) => {
     return (
         <Card className='mb-6 w-full'>
             <CardHeader>
@@ -243,7 +243,7 @@ const ResultsDisplay = ({ results }: { results: string }) => {
             </CardHeader>
             <CardContent>
                 <div className='rounded-md bg-slate-50 p-4 dark:bg-slate-900'>
-                    <pre className='text-sm whitespace-pre-wrap'>{results.toString()}</pre>
+                    <pre className='text-sm whitespace-pre-wrap'>{JSON.stringify(results, null, 2)}</pre>
                 </div>
             </CardContent>
         </Card>
