@@ -64,7 +64,7 @@ export default function Home() {
                                 <span className='bg-gradient-to-r from-[#174EAB] via-[#04C7FE] to-[#174EAB] bg-clip-text text-[3.5rem] text-transparent'>
                                     Seha
                                 </span>
-                                <div className='absolute -top-[20px] -right-6 rotate-25'>
+                                <div className='absolute -top-[10px] -right-6 rotate-25'>
                                     <Logo size={50} />
                                 </div>
                             </div>{' '}

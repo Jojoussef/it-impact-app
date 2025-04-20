@@ -5,7 +5,7 @@ const Footer = () => {
                 <div className='flex items-center justify-center gap-2'>
                     <LogoArabic size={30} />
                 </div>
-                <p className='text-sm text-gray-500'>Delulus - All Right Reserved. 2025</p>
+                <p className='text-sm text-gray-500'>Delulus - All Right Reserved. @2025</p>
             </div>
         </footer>
     );
