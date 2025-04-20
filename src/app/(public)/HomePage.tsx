@@ -9,8 +9,6 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
     return (
         <div className='relative min-h-screen overflow-hidden bg-white'>
-            {/* Animated blurred blobs */}
-
             {/* Top curved lines */}
             <div className='absolute top-0 left-0 flex h-[60rem] w-full items-center justify-center overflow-hidden'>
                 <div className='absolute -top-[18.5rem] h-[27rem] w-[70%] rounded-[100%] border-4 border-[#05B8FC]'></div>
@@ -83,7 +81,7 @@ export default function Home() {
 
                 {/* Data Security Section */}
                 <section className='mt-[15rem] flex w-full flex-col items-center justify-center gap-12 text-center'>
-                    <h1 className='text-3xl font-[500]'>Maintain the Full Legal Protection of Your Data</h1>
+                    <h1 className='text-3xl font-[500] text-black'>Maintain the Full Legal Protection of Your Data</h1>
                     <svg
                         width='80%'
                         height='20rem'
@@ -172,7 +170,7 @@ export default function Home() {
     );
 }
 
-function Logo({ size = 35 }) {
+export function Logo({ size = 35 }) {
     return (
         <>
             <img src='/icon.svg' alt='Seha Logo' width={size} height={size} />

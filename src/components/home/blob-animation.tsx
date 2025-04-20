@@ -53,23 +53,23 @@ export function BlobAnimation() {
     };
 
     return (
-        <div ref={containerRef} id='blobs' className='pointer-events-none absolute inset-0 h-[42rem] overflow-hidden'>
+        <div ref={containerRef} id='blobs' className='pointer-events-none absolute inset-0 h-[50rem] overflow-hidden'>
             <div className='relative h-full w-full'>
                 <motion.div
-                    className='blob absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300 opacity-60 blur-[80px]'
-                    style={{ x: '200px', y: '0px' }}
+                    className='blob absolute top-1/2 left-1/2 h-[200px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300 opacity-60 blur-[80px]'
+                    style={{ x: '400px', y: '-250px' }}
                     variants={blob1Variants}
                     animate='animate'
                 />
                 <motion.div
                     className='blob absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400 opacity-70 blur-[70px]'
-                    style={{ x: '-250px', y: '50px' }}
+                    style={{ x: '-550px', y: '50px' }}
                     variants={blob2Variants}
                     animate='animate'
                 />
                 <motion.div
-                    className='blob absolute top-1/2 left-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-200 opacity-60 blur-[90px]'
-                    style={{ x: '100px', y: '200px' }}
+                    className='blob opacity-8s0 absolute top-1/2 left-1/2 h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-200 blur-[50px]'
+                    style={{ x: '-100px', y: '200px' }}
                     variants={blob3Variants}
                     animate='animate'
                 />
