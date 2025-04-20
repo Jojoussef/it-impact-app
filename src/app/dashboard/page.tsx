@@ -13,6 +13,7 @@ export default function Dashboard() {
     const { status } = useSession();
     const [collapsed, setCollapsed] = useState(false);
     const [activeItem, setActiveItem] = useState('dashboard');
+    console.log('activeItem', activeItem);
 
     return (
         <div className='flex h-screen bg-gray-50'>
