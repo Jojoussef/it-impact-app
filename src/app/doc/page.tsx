@@ -97,7 +97,11 @@ export default function DocumentUploadPage() {
                             {documents[doc.id] ? (
                                 <div className='relative h-48 w-full overflow-hidden rounded-md'>
                                     <Image
-                                        src={documents[doc.id] || '/placeholder.svg'}
+                                        src={
+                                            documents[doc.id]
+                                                ? URL.createObjectURL(documents[doc.id]!)
+                                                : '/placeholder.svg'
+                                        }
                                         alt={`Uploaded ${doc.name}`}
                                         fill
                                         className='object-contain'
