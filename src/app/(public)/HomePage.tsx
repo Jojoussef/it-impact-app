@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { BlobAnimation } from '@/components/home/blob-animation';
 import { ContactSection } from '@/components/home/contact-section';
+import { DigitizationSection } from '@/components/home/digitalization-section';
 import Footer from '@/components/home/footer';
 import { HowItWorks } from '@/components/home/how-it-works';
 import { MobileMenu } from '@/components/home/mobile-menu';
@@ -46,9 +47,11 @@ export default function Home() {
                         </nav>
 
                         <div className='flex items-center'>
-                            <button className='hidden rounded-full bg-blue-400 px-6 py-2 text-white transition-colors hover:bg-blue-500 md:block'>
+                            <Link
+                                href='/auth/sign-in'
+                                className='hidden rounded-full bg-blue-400 px-6 py-2 text-white transition-colors hover:bg-blue-500 md:block'>
                                 Login
-                            </button>
+                            </Link>
                             <MobileMenu />
                         </div>
                     </header>
@@ -83,10 +86,14 @@ export default function Home() {
 
                 {/* Data Security Section */}
                 <section className='mt-[15rem] flex w-full flex-col items-center justify-center gap-12 text-center'>
-                    <div className='mt-[5rem] flex h-[18rem] w-full items-center justify-center border-b-6 border-[#2A79FD]/40'>
+                    <div className='mt-[5rem] flex h-[18rem] w-full items-center justify-center'>
                         <img src='/images/cnam-logo.png' alt='CNAM Logo Image' className='w-[55%] object-contain' />
                     </div>
                 </section>
+
+                {/* Digitalization Section */}
+                <DigitizationSection />
+
                 {/* How it Works Section */}
                 <section className='mt-[15rem] px-16'>
                     <HowItWorks />

@@ -14,13 +14,13 @@ export function HowItWorks() {
                 <div className='space-y-16 sm:space-y-20 md:space-y-24'>
                     {/* Feature 1 - Convenience */}
                     <div className='flex flex-col items-center gap-6 sm:gap-8 md:flex-row lg:gap-12'>
-                        <div className='aspect-video w-full rounded-lg bg-gray-200 md:w-1/2'>
+                        <div className='aspect-video w-full rounded-lg md:w-1/2'>
                             <Image
-                                src='/placeholder.svg?height=300&width=400'
+                                src='/images/conv.png'
                                 width={400}
                                 height={300}
                                 alt='Convenience illustration'
-                                className='h-full w-full rounded-lg object-cover'
+                                className='h-full w-full rounded-lg object-contain'
                                 sizes='(max-width: 768px) 100vw, 50vw'
                             />
                         </div>
@@ -36,33 +36,38 @@ export function HowItWorks() {
 
                     {/* Feature 2 - Traceability */}
                     <div className='flex flex-col items-center gap-6 sm:gap-8 md:flex-row-reverse lg:gap-12'>
-                        <div className='aspect-video w-full rounded-lg bg-gray-200 md:w-1/2'>
+                        <div className='aspect-video w-full rounded-lg md:w-1/2'>
                             <Image
-                                src='/placeholder.svg?height=300&width=400'
+                                src='/images/tracability.png'
                                 width={400}
                                 height={300}
                                 alt='Traceability illustration'
-                                className='h-full w-full rounded-lg object-cover'
+                                className='h-full w-full rounded-lg object-contain'
                                 sizes='(max-width: 768px) 100vw, 50vw'
                             />
                         </div>
-                        <div className='mt-4 w-full md:mt-0 md:w-1/2 md:pr-6 lg:pr-8'>
-                            <h3 className='mb-2 text-center text-xl font-medium sm:mb-4 sm:text-2xl md:text-left'>
-                                Traceability
-                            </h3>
-                            <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>save time,</p>
+                        <div className='mt-4 flex w-full flex-col items-center md:mt-0 md:w-1/2 md:pr-6 lg:pr-8'>
+                            <div>
+                                <h3 className='mb-2 text-center text-xl font-medium sm:mb-4 sm:text-2xl md:text-left'>
+                                    Traçability
+                                </h3>
+                                <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>
+                                    Track your prescriptions through our secure platform, ensuring a complete digital
+                                    record of your healthcare journey
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     {/* Feature 3 - AI Analyses */}
                     <div className='flex flex-col items-center gap-6 sm:gap-8 md:flex-row lg:gap-12'>
-                        <div className='aspect-video w-full rounded-lg bg-gray-200 md:w-1/2'>
+                        <div className='aspect-video w-full rounded-lg md:w-1/2'>
                             <Image
-                                src='/placeholder.svg?height=300&width=400'
+                                src='/images/ai-analysis.png'
                                 width={400}
                                 height={300}
                                 alt='AI Analyses illustration'
-                                className='h-full w-full rounded-lg object-cover'
+                                className='h-full w-full rounded-lg object-contain'
                                 sizes='(max-width: 768px) 100vw, 50vw'
                             />
                         </div>
@@ -70,27 +75,33 @@ export function HowItWorks() {
                             <h3 className='mb-2 text-center text-xl font-medium sm:mb-4 sm:text-2xl md:text-left'>
                                 AI Analyses
                             </h3>
-                            <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>save time,</p>
+                            <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>
+                                Get personalized insights and recommendations based on your health data, powered by AI
+                            </p>
                         </div>
                     </div>
 
                     {/* Feature 4 - Recommendations */}
                     <div className='flex flex-col items-center gap-6 sm:gap-8 md:flex-row-reverse lg:gap-12'>
-                        <div className='aspect-video w-full rounded-lg bg-gray-200 md:w-1/2'>
+                        <div className='aspect-video w-full rounded-lg md:w-1/2'>
                             <Image
-                                src='/placeholder.svg?height=300&width=400'
+                                src='/images/recommendations.png'
                                 width={400}
                                 height={300}
                                 alt='Recommendations illustration'
-                                className='h-full w-full rounded-lg object-cover'
-                                sizes='(max-width: 768px) 100vw, 50vw'
+                                className='h-full w-full bg-transparent object-contain'
                             />
                         </div>
-                        <div className='mt-4 w-full md:mt-0 md:w-1/2 md:pr-6 lg:pr-8'>
-                            <h3 className='mb-2 text-center text-xl font-medium sm:mb-4 sm:text-2xl md:text-left'>
-                                Recommendations
-                            </h3>
-                            <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>save time,</p>
+                        <div className='mt-4 flex w-full flex-col items-center md:mt-0 md:w-1/2 md:pr-6 lg:pr-8'>
+                            <div>
+                                <h3 className='mb-2 text-center text-xl font-medium sm:mb-4 sm:text-2xl md:text-left'>
+                                    Recommendations
+                                </h3>
+                                <p className='text-center text-sm text-gray-600 sm:text-base md:text-left'>
+                                    Receive tailored recommendations for your health and wellness based on your data
+                                    analysis
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
