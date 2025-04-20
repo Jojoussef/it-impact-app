@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
-import { ChevronLeft, ChevronRight, LayoutDashboard, LogOut, RefreshCcw, Settings } from 'lucide-react';
+import { ChevronLeft, ChevronRight, File, LayoutDashboard, LogOut, RefreshCcw, Settings } from 'lucide-react';
 
 interface DashboardSidebarProps {
     collapsed: boolean;
@@ -17,6 +17,7 @@ interface DashboardSidebarProps {
 export function DashboardSidebar({ collapsed, setCollapsed, activeItem, setActiveItem }: DashboardSidebarProps) {
     const navItems = [
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { id: 'submit-doc', label: 'Submit Claim', icon: File },
         { id: 'refund', label: 'Refund Request', icon: RefreshCcw },
         { id: 'settings', label: 'Settings', icon: Settings }
     ];
@@ -51,12 +52,11 @@ export function DashboardSidebar({ collapsed, setCollapsed, activeItem, setActiv
             <div className={`flex items-center ${collapsed ? 'justify-center' : 'px-4'} py-4`}>
                 <Avatar className='h-10 w-10'>
                     <AvatarImage src='/placeholder.svg?height=40&width=40' alt='User' />
-                    <AvatarFallback style={{ backgroundColor: '#04C7FE' }}>JD</AvatarFallback>
+                    <AvatarFallback style={{ backgroundColor: '#04C7FE' }}>Y</AvatarFallback>
                 </Avatar>
                 {!collapsed && (
                     <div className='ml-3'>
-                        <p className='text-sm font-medium'>John Doe</p>
-                        <p className='text-xs text-gray-500'>Premium Member</p>
+                        <p className='text-sm font-medium'>Youssef</p>
                     </div>
                 )}
             </div>

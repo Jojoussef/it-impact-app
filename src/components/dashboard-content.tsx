@@ -5,6 +5,7 @@ import { SettingsContent } from '@/components/settings-content';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
+import DocumentUploadPage from './doc-submission';
 import { Activity, Calendar, CreditCard, DollarSign, Download, FileText, RefreshCcw, Users } from 'lucide-react';
 
 interface DashboardContentProps {
@@ -135,7 +136,7 @@ export function DashboardContent({ collapsed, activeItem }: DashboardContentProp
                         </div>
                     </>
                 )}
-
+                {activeItem === 'submit-doc' && <DocumentUploadPage />}
                 {activeItem === 'refund' && <RefundRequestContent />}
                 {activeItem === 'settings' && <SettingsContent />}
             </main>
