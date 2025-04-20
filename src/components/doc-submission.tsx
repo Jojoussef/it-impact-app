@@ -22,6 +22,7 @@ export default function DocumentUploadPage() {
     const [submitting, setSubmitting] = useState(false);
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    const [results, setResults] = useState<string>('');
 
     // Check if all documents are uploaded
     const allDocumentsUploaded = REQUIRED_DOCUMENTS.every((doc) => documents[doc.id]);
@@ -51,11 +52,12 @@ export default function DocumentUploadPage() {
 
         try {
             await submitFilledFormImage(documents[1]!)
-                .then(() => {
+                .then((results) => {
+                    setResults(results);
                     setStatus('success');
                     setDocuments({}); // Clear documents after successful submission
-                    
-return;
+
+                    return;
                 })
                 .catch(() => {
                     setStatus('error');
@@ -77,7 +79,7 @@ return;
             </p>
 
             {/* Document upload cards */}
-            <div className='mb-8 space-y-6'>
+            <div className='mb-8 w-[40%] space-y-6'>
                 {REQUIRED_DOCUMENTS.map((doc) => (
                     <Card
                         key={doc.id}
@@ -180,6 +182,7 @@ return;
                 <div className='mb-6 flex items-center gap-3 rounded-md border border-green-200 bg-green-50 p-4 text-green-700 dark:border-green-900 dark:bg-green-950 dark:text-green-300'>
                     <Check className='h-5 w-5 flex-shrink-0' />
                     <p>All documents have been successfully verified!</p>
+                    {results && <ResultsDisplay results={results} />}
                 </div>
             )}
 
@@ -230,3 +233,19 @@ return;
         </div>
     );
 }
+
+const ResultsDisplay = ({ results }: { results: string }) => {
+    return (
+        <Card className='mb-6 w-full'>
+            <CardHeader>
+                <CardTitle>Form Analysis Results</CardTitle>
+                <CardDescription>Here's what we found in your submitted document</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className='rounded-md bg-slate-50 p-4 dark:bg-slate-900'>
+                    <pre className='text-sm whitespace-pre-wrap'>{results}</pre>
+                </div>
+            </CardContent>
+        </Card>
+    );
+};
