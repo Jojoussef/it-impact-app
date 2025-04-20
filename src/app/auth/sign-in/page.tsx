@@ -40,7 +40,8 @@ export default function SignIn() {
             if (result?.error) {
                 setError('Invalid email or password');
                 setIsLoading(false);
-                return;
+                
+return;
             }
 
             router.push('/dashboard');
