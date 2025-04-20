@@ -124,7 +124,11 @@ export function SettingsContent() {
                         </div>
                     </CardContent>
                     <CardFooter>
-                        <Button style={{ backgroundColor: '#174EAB' }} onClick={saveProfile} disabled={isLoading}>
+                        <Button
+                            style={{ backgroundColor: '#174EAB', color: 'white' }}
+                            className='text-white'
+                            onClick={saveProfile}
+                            disabled={isLoading}>
                             {isLoading ? 'Saving...' : 'Save changes'}
                         </Button>
                     </CardFooter>
