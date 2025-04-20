@@ -30,7 +30,7 @@ export function DashboardContent({ collapsed, activeItem }: DashboardContentProp
                         <Download className='mr-2 h-4 w-4' />
                         Download Report
                     </Button>
-                    <Button size='sm' style={{ backgroundColor: '#174EAB' }}>
+                    <Button size='sm' style={{ backgroundColor: '#174EAB', color: 'white' }}>
                         <FileText className='mr-2 h-4 w-4' />
                         New Claim
                     </Button>

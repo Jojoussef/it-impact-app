@@ -67,7 +67,7 @@ export default function DocumentUploadPage() {
     };
 
     return (
-        <div className='container max-w-3xl py-10'>
+        <div className='container flex w-full flex-col items-center justify-center py-10'>
             <h1 className='mb-6 text-center text-3xl font-bold'>Document Verification</h1>
             <p className='text-muted-foreground mb-8 text-center'>
                 Please take clear photos of the following documents. Ensure good lighting and that all text is legible.
@@ -188,8 +188,8 @@ export default function DocumentUploadPage() {
             )}
 
             {/* Submit button */}
-            <Button
-                className='w-full py-6 text-lg'
+            <button
+                className='text-md flex h-[4rem] w-[80%] flex-row items-center justify-center rounded-2xl bg-[#174EAB] py-6 font-medium text-white hover:cursor-pointer hover:bg-[#0F3C8A]'
                 onClick={handleSubmit}
                 disabled={!allDocumentsUploaded || submitting}>
                 {submitting ? (
@@ -219,7 +219,7 @@ export default function DocumentUploadPage() {
                         Submit Documents
                     </>
                 )}
-            </Button>
+            </button>
 
             <p className='text-muted-foreground mt-4 text-center text-sm'>
                 Your documents are encrypted and securely stored according to our privacy policy.

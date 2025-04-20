@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
 export default withBundleAnalyzer(nextConfig);
 
 module.exports = {
+    devIndicators: false,
     turbopack: {
         resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json']
     }
