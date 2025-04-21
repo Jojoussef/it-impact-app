@@ -1,6 +1,6 @@
 # Seha Front-end
 
-![Seha Logo](public/icon.png)
+![Seha Logo](public/icon.svg)
 
 A Next.js 15 application powering **Seha**, a smart AI-assisted platform for digitizing CNAM (Tunisian national health insurance) claim submissions, tracking, and insights.
 
