@@ -85,8 +85,8 @@ importers:
         specifier: ^9.6.0
         version: 9.7.0
       '@next/bundle-analyzer':
-        specifier: ^15.3.0
-        version: 15.3.1
+        specifier: ^15.3.2
+        version: 15.3.2
       '@next/eslint-plugin-next':
         specifier: ^15.3.0
         version: 15.3.1
@@ -571,8 +571,8 @@ packages:
       '@prisma/client': '>=2.26.0 || >=3'
       next-auth: ^4
 
-  '@next/bundle-analyzer@15.3.1':
-    resolution: {integrity: sha512-NqUZrjVruGbdQaPE3OSEXP+ZuULqumeHVTuU9pOX1V0/9BWY9FOck3jgQGFdBtG41nOYuO8+CoHKDQAVIPQJrw==}
+  '@next/bundle-analyzer@15.3.2':
+    resolution: {integrity: sha512-zY5O1PNKNxWEjaFX8gKzm77z2oL0cnj+m5aiqNBgay9LPLCDO13Cf+FJONeNq/nJjeXptwHFT9EMmTecF9U4Iw==}
 
   '@next/env@15.3.1':
     resolution: {integrity: sha512-cwK27QdzrMblHSn9DZRV+DQscHXRuJv6MydlJRpFSqJWZrTYMLzKDeyueJNN9MGd8NNiUKzDQADAf+dMLXX7YQ==}
@@ -3204,7 +3204,7 @@ snapshots:
       '@prisma/client': 6.6.0(prisma@6.6.0(typescript@5.8.3))(typescript@5.8.3)
       next-auth: 4.24.11(next@15.3.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
-  '@next/bundle-analyzer@15.3.1':
+  '@next/bundle-analyzer@15.3.2':
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
